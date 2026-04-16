@@ -1,11 +1,526 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    
+
+    <div id="prog"></div>
+    <canvas id="star-canvas"></canvas>
+    <div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+    <div class="layer">
+
+        <!-- NAV -->
+        <nav id="nav" role="navigation" aria-label="Main">
+            <div class="nav-container">
+                <a href="#hero" class="logo">Software Developer</a>
+                <div class="nav-links">
+                    <a href="#hero" class="nav-a on" data-s="hero">Home</a>
+                    <a href="#about" class="nav-a" data-s="about">About</a>
+                    <a href="#skills" class="nav-a" data-s="skills">Skills</a>
+                    <a href="#projects" class="nav-a" data-s="projects">Projects</a>
+                    <a href="#feedback" class="nav-a" data-s="feedback">Feedback</a>
+                    <a href="#contact" class="nav-a" data-s="contact">Contact</a>
+                </div>
+                <button id="mob-btn" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div id="mob-menu" class="mobile-menu">
+                <div class="mobile-nav-links">
+                    <a href="#hero" class="nav-a" onclick="closeMob()">Home</a>
+                    <a href="#about" class="nav-a" onclick="closeMob()">About</a>
+                    <a href="#skills" class="nav-a" onclick="closeMob()">Skills</a>
+                    <a href="#projects" class="nav-a" onclick="closeMob()">Projects</a>
+                    <a href="#feedback" class="nav-a" onclick="closeMob()">Feedback</a>
+                    <a href="#contact" class="nav-a" onclick="closeMob()">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- HERO / PROFILE -->
+        <section id="hero" class="hero-section">
+            <div class="hero-container">
+                <!-- Avatar -->
+                <div class="avatar-wrapper fl">
+                    <div class="avatar-glow"></div>
+                    <div class="profile-ring">
+                        <div class="profile-ring-inner">
+                            <img src="./Screenshot 2026-04-10 021421.png" alt="Profile">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text -->
+                <div class="hero-content">
+                    <p class="hero-welcome">Hey! well come to my Portfolio</p>
+                    <h1 class="hero-name" >
+                        This Is <br><span class="accent-text">ENG Mahram Rezaie!</span>
+                    </h1>
+                    <p class="hero-role">
+                        <span id="typed"></span><span class="cur"></span>
+                    </p>
+                    <p class="hero-desc">
+                        Crafting modern web experiences with passion and precision. I turn ideas into clean, fast, and
+                        beautiful digital products that make a difference.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn-main">
+                            View Work <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn-ghost">
+                            Contact Me <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                    <!-- Socials -->
+                    <div class="hero-socials">
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS -->
+        <section class="stats-section rv">
+            <div class="stats-container">
+                <div class="stat-card glass">
+                    <div class="stat-val" data-t="47">0</div>
+                    <div class="stat-label">Projects Delivered</div>
+                </div>
+                <div class="stat-card glass">
+                    <div class="stat-val" data-t="32">0</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-card glass">
+                    <div class="stat-val" data-t="5">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card glass">
+                    <div class="stat-val" data-t="15">0</div>
+                    <div class="stat-label">Technologies</div>
+                </div>
+            </div>
+        </section>
+        <div class="divider"></div>
+
+        <!-- ABOUT -->
+        <section id="about" class="about-section rv">
+            <div class="about-container">
+                <div class="about-content">
+                    <span class="section-tag">About Me</span>
+                    <h2 class="section-title">Building Digital<br><span class="accent-text">Experiences</span></h2>
+                    <p class="about-text">I'm Mahram Jan, a web and Developer with over 2 years of experience creating web applications that are fast, accessible, and visually compelling. I specialize in JavaScript ecosystems and modern frameworks.</p>
+                    <p class="about-text">My approach combines clean architecture with pixel-perfect design. Great software isn't just about code — it's about understanding people and solving real problems.</p>
+                    <div class="about-meta">
+                        <span class="meta-item">
+                            <i class="fas fa-map-marker-alt"></i> Afghanistan
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-briefcase"></i> Web Dev
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-graduation-cap"></i> CS Degree
+                        </span>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="glass about-box">
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-code"></i>
+                                <p>Clean Code</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-bolt"></i>
+                                <p>Fast Delivery</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <p>Creative</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-heart"></i>
+                                <p>Passionate</p>
+                            </div>
+                        </div>
+                        <p class="quote">"Quality is not an act, it is a habit."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="divider"></div>
+
+        <!-- SKILLS -->
+        <section id="skills" class="skills-section rv">
+            <div class="section-header">
+                <span class="section-tag">Skills</span>
+                <h2 class="section-title">Technologies I <span class="accent-text">Use</span></h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card glass tilt">
+                    <div class="skill-icon skill-icon-green">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="skill-title">Frontend</h3>
+                    <div class="tags-container">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Tailwind</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Bootstrap</span>
+                        <span class="tag">Design</span>
+                        <span class="tag">3D</span>
+                    </div>
+                </div>
+                <div class="skill-card glass tilt">
+                    <div class="skill-icon skill-icon-cyan">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="skill-title">Backend</h3>
+                    <div class="tags-container">
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Express</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Django</span>
+                        <span class="tag">REST API</span>
+                        <span class="tag">GraphQL</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">PostgreSQL</span>
+                    </div>
+                </div>
+                <div class="skill-card glass tilt">
+                    <div class="skill-icon skill-icon-yellow">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="skill-title">Tools</h3>
+                    <div class="tags-container">
+                        <span class="tag">Git</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Firebase</span>
+                        <span class="tag">Figma</span>
+                        <span class="tag">VS Code</span>
+                        <span class="tag">Linux</span>
+                        <span class="tag">AWS</span>
+                        <span class="tag">CI/CD</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="divider"></div>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="projects-section rv">
+            <div class="section-header">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Featured <span class="accent-text">Projects</span></h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card glass tilt group">
+                    <div class="project-image">
+                        <img src="https://picsum.photos/seed/chat-mj/600/400.jpg" alt="Chat App">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag tag-green">React</span>
+                            <span class="project-tag tag-cyan">Node.js</span>
+                            <span class="project-tag tag-yellow">Socket.io</span>
+                        </div>
+                        <h3 class="project-title">Chat Application</h3>
+                        <p class="project-desc">Real-time messaging with rooms, typing indicators, and file sharing.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link link-primary">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                            <a href="#" class="project-link link-secondary">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glass tilt group">
+                    <div class="project-image">
+                        <img src="https://picsum.photos/seed/ecom-mj/600/400.jpg" alt="E-Commerce">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag tag-green">Next.js</span>
+                            <span class="project-tag tag-cyan">MongoDB</span>
+                            <span class="project-tag tag-yellow">Stripe</span>
+                        </div>
+                        <h3 class="project-title">E-Commerce Platform</h3>
+                        <p class="project-desc">Full-featured store with cart, payments, and admin dashboard.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link link-primary">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                            <a href="#" class="project-link link-secondary">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glass tilt group">
+                    <div class="project-image">
+                        <img src="https://picsum.photos/seed/dash-mj/600/400.jpg" alt="Dashboard">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag tag-green">React</span>
+                            <span class="project-tag tag-cyan">D3.js</span>
+                        </div>
+                        <h3 class="project-title">Analytics Dashboard</h3>
+                        <p class="project-desc">Interactive data visualization with real-time charts and filters.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link link-primary">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                            <a href="#" class="project-link link-secondary">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glass tilt group">
+                    <div class="project-image">
+                        <img src="https://picsum.photos/seed/blog-mj/600/400.jpg" alt="Blog">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag tag-green">Next.js</span>
+                            <span class="project-tag tag-cyan">MDX</span>
+                        </div>
+                        <h3 class="project-title">Blog Platform</h3>
+                        <p class="project-desc">Markdown blog with syntax highlighting and SEO optimization.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link link-primary">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                            <a href="#" class="project-link link-secondary">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glass tilt group">
+                    <div class="project-image">
+                        <img src="https://picsum.photos/seed/weather-mj/600/400.jpg" alt="Weather">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag tag-green">JavaScript</span>
+                            <span class="project-tag tag-cyan">API</span>
+                        </div>
+                        <h3 class="project-title">Weather App</h3>
+                        <p class="project-desc">Beautiful weather app with animated backgrounds and forecasts.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link link-primary">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                            <a href="#" class="project-link link-secondary">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glass tilt group">
+                    <div class="project-image">
+                        <img src="https://picsum.photos/seed/task-mj/600/400.jpg" alt="Task Manager">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag tag-green">Vue.js</span>
+                            <span class="project-tag tag-cyan">Firebase</span>
+                        </div>
+                        <h3 class="project-title">Task Manager</h3>
+                        <p class="project-desc">Collaborative task board with drag-drop and real-time sync.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link link-primary">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                            <a href="#" class="project-link link-secondary">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="divider"></div>
+
+        <!-- FEEDBACK -->
+        <section id="feedback" class="feedback-section rv">
+            <div class="section-header">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title">Client <span class="accent-text">Feedback</span></h2>
+            </div>
+            <div class="feedback-grid">
+                <div class="feedback-card glass tilt">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="feedback-text">"Mahram delivered an exceptional e-commerce platform. His attention to detail and proactive communication made the process incredibly smooth."</p>
+                    <div class="feedback-author">
+                        <img src="https://picsum.photos/seed/cl1-mj/40/40.jpg" alt="Client">
+                        <div class="author-info">
+                            <p class="author-name">Rohulla Ahmadi</p>
+                            <p class="author-role">CEO, TechStart</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feedback-card glass tilt">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="feedback-text">"Working with Mahram was great. He transformed our complex requirements into an intuitive dashboard our team loves."</p>
+                    <div class="feedback-author">
+                        <img src="https://picsum.photos/seed/cl2-mj/40/40.jpg" alt="Client">
+                        <div class="author-info">
+                            <p class="author-name">Ali Reza Hashimi</p>
+                            <p class="author-role">PM, DataFlow</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feedback-card glass tilt">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="feedback-text">"Outstanding technical skills. What sets Mahram apart is understanding business goals and translating them into effective solutions."</p>
+                    <div class="feedback-author">
+                        <img src="https://picsum.photos/seed/cl3-mj/40/40.jpg" alt="Client">
+                        <div class="author-info">
+                            <p class="author-name">Naweed Rezai</p>
+                            <p class="author-role">Founder, BizConnect</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="divider"></div>
+
+        <!-- CONTACT -->
+        <section id="contact" class="contact-section rv">
+            <div class="section-header">
+                <span class="section-tag">Contact</span>
+                <h2 class="section-title">Let's <span class="accent-text">Connect</span></h2>
+                <p class="section-subtitle">Have a project in mind? Drop me a message and I'll respond within 24 hours.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-card glass">
+                        <div class="info-icon info-icon-green">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-text">
+                            <p class="info-label">Email</p>
+                            <p class="info-value">mahram@example.com</p>
+                        </div>
+                    </div>
+                    <div class="info-card glass">
+                        <div class="info-icon info-icon-cyan">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-text">
+                            <p class="info-label">Phone</p>
+                            <p class="info-value">+93 775 509 373</p>
+                        </div>
+                    </div>
+                    <div class="info-card glass">
+                        <div class="info-icon info-icon-yellow">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-text">
+                            <p class="info-label">Location</p>
+                            <p class="info-value">Kabul, Afghanistan</p>
+                        </div>
+                    </div>
+                </div>
+                <form id="cform" class="contact-form glass" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Name</label>
+                            <input type="text" id="fname" class="form-input" placeholder="Your name" required>
+                            <span class="form-error" id="fname-e">Required</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" id="femail" class="form-input" placeholder="you@email.com" required>
+                            <span class="form-error" id="femail-e">Valid email needed</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Subject</label>
+                        <input type="text" id="fsubj" class="form-input" placeholder="Project inquiry" required>
+                        <span class="form-error" id="fsubj-e">Required</span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Message</label>
+                        <textarea id="fmsg" rows="4" class="form-input form-textarea" placeholder="Tell me about your project..." required></textarea>
+                        <span class="form-error" id="fmsg-e">Required</span>
+                    </div>
+                    <button type="submit" class="form-submit">Send</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-container">
+                <p class="copyright">&copy; 2025 Mahram Jan. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="./script.js"></script>
 </body>
+
 </html>
